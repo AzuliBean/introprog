@@ -37,6 +37,8 @@ elif ct > 3 and ct < 18:
     print("we open at 18")
 """
 
+"""
+#övning 10
 #creates a 50%50 chance between 0 and 1
 cc = randint (0,1)
 
@@ -52,3 +54,15 @@ if user_Input == cc:
     print("correct")
 else:
     print("wrong")
+"""
+
+#övning 11
+value_One = int(input("input your value: "))
+value_Two = int(input("input your value you want to devided with: "))
+
+if value_Two == 0:
+    print("you cannot divide with 0")
+elif value_One % value_Two == 0:
+    print("yes ", value_One, "and", value_Two, "are able to divide without decimals left behind")
+else: 
+    print("no ", value_One, "and", value_Two, "aren't able to divide without decimals left behind")
