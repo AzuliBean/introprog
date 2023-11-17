@@ -56,6 +56,7 @@ else:
     print("wrong")
 """
 
+"""
 #övning 11
 value_One = int(input("input your value: "))
 value_Two = int(input("input your value you want to devided with: "))
@@ -66,3 +67,25 @@ elif value_One % value_Two == 0:
     print("yes ", value_One, "and", value_Two, "are able to divide without decimals left behind")
 else: 
     print("no ", value_One, "and", value_Two, "aren't able to divide without decimals left behind")
+"""
+
+"""
+#övning 12
+timme = int(input('Ange timma: ')) 
+minut = int(input('Ange minut: ')) 
+plats = input('Ange plats: ') 
+tidsskillnad = int(input('Ange tidskillnad i hela timmar: ')) 
+
+# räkna ut vilken hel timme du hamnar på 
+timme_annan_tidszon = timme + tidsskillnad
+
+# kontrollera så att ny hel timme inte blir för stor eller negativ
+if timme_annan_tidszon >= 24:    
+    timme_annan_tidszon = timme_annan_tidszon - 24 
+elif timme_annan_tidszon < 0:     
+    timme_annan_tidszon = timme_annan_tidszon + 24
+
+tid_annan_tidszon = str(timme_annan_tidszon) + ":" + str(minut) 
+                                         
+print("Klockan är nu ", tid_annan_tidszon, "i", plats)
+"""
