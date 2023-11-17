@@ -89,3 +89,16 @@ tid_annan_tidszon = str(timme_annan_tidszon) + ":" + str(minut)
                                          
 print("Klockan är nu ", tid_annan_tidszon, "i", plats)
 """
+
+"""
+#övning 13
+rain = input("is it raining yes or no? ")
+R = True if rain == "yes" else False
+wind = input("is it windy yes or no? ")
+W = True if wind == "yes" else False
+
+if (R == True and W == False):
+    print("Antagendet stämmer inte.")
+else:
+    print("Antagandet stämmer.")
+"""
