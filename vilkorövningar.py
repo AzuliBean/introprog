@@ -98,7 +98,42 @@ wind = input("is it windy yes or no? ")
 W = True if wind == "yes" else False
 
 if (R == True and W == False):
-    print("Antagendet stämmer inte.")
+    print("The presumption isn't correct")
 else:
-    print("Antagandet stämmer.")
+    print("The presumption is correct")
 """
+
+"""
+#övning 14
+user_Input = int(input("what length do you want your paper to be in mm: "))
+
+if user_Input <= 148:
+    print("A6")
+elif user_Input <= 210:
+    print("A5")
+elif user_Input <= 297:
+    print("A4")
+elif user_Input <= 420:
+    print("A3")
+elif user_Input <= 594:
+    print("A2")
+else:
+    print("sorry there is no paper format that is big enough")
+"""
+
+
+#övning 15
+user_Answer_A = str.lower(input("do you want to Cooperate or do you want to Betray"))
+user_A = True if user_Answer_A == "cooperate" else False
+
+user_Answer_B = str.lower(input("do you want to Cooperate or do you want to Betray"))
+user_B = True if user_Answer_B == "cooperate" else False
+
+if user_A and user_B:
+    print("both players got 2 points ")
+elif user_A and not user_B:
+    print("User B betrayed User A and got all the points instead")
+elif user_B and not user_A:
+    print("User A betrayed User B and got all the points instead")
+else:
+    print("Both players tried to betray eachother and no one ended up getting points")
