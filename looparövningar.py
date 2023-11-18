@@ -91,7 +91,7 @@ while current_Spot <= user_End:
     current_Spot += 2
 """
 
-
+"""
 #övning 9.8
 
 counter = 0
@@ -107,3 +107,31 @@ while current_Spot <= user_End:
     if counter == 10:
         print()
         counter = 0
+"""
+
+"""
+#övning 10
+
+import random
+
+x = random.randint(1,10)
+user_Input = int(input("guess a random number between 1 and 10: "))
+
+while user_Input != x:
+    if user_Input > x:
+        user_Input = int(input("The number that you guessed is bigger than the hidden number \nGuess again: "))
+    elif user_Input < x:
+        user_Input = int(input("The number that you guessed is smaller than the hidden number \nGuess again: "))
+print("you guessed the right number")
+"""
+
+#övning 11
+while True:
+    x = int(input("Enter a value: "))
+
+    total_Sum = sum(range(1, x+1))
+    print("The sum of numbers in the series is: ", total_Sum)
+
+    if total_Sum % 4 == 0:
+        print("It is evenly divisible by 4!")
+        break
