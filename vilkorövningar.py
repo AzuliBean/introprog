@@ -121,12 +121,12 @@ else:
     print("sorry there is no paper format that is big enough")
 """
 
-
+"""
 #övning 15
-user_Answer_A = str.lower(input("do you want to Cooperate or do you want to Betray"))
+user_Answer_A = str.lower(input("do you want to Cooperate or do you want to Betray: "))
 user_A = True if user_Answer_A == "cooperate" else False
 
-user_Answer_B = str.lower(input("do you want to Cooperate or do you want to Betray"))
+user_Answer_B = str.lower(input("do you want to Cooperate or do you want to Betray: "))
 user_B = True if user_Answer_B == "cooperate" else False
 
 if user_A and user_B:
@@ -137,3 +137,25 @@ elif user_B and not user_A:
     print("User A betrayed User B and got all the points instead")
 else:
     print("Both players tried to betray eachother and no one ended up getting points")
+"""
+
+"""
+#övning 16
+user_Choice = str.lower(input("Äntligen är du ute i naturen! Du kommer till ett vägskäl. \nVälj att: \nA: gå mot den mystiska skogen eller B: gå mot havets vägljud? \nVad väljer du:  "))
+
+if user_Choice == "a":
+    user_Choice = str.lower(input("\nEn gigantisk orm dyker upp! \nVälj att \nA: Springa eller B: Spela död \nVad väljer du:  "))
+
+    if user_Choice == "a":
+        print("\nDu är chanslös och ångrar bittert att du lämnat samhället")
+    else: 
+        print("\nOrmen äter en get som följt dig istället och du hittar blåbär")
+
+elif user_Choice == "b":
+    user_Choice = str.lower(input("\nHavet suger och du blir hungrig. \nVälj att \nA: äta en snigel eller B: Försök fiska \nVad väljer du: "))
+
+    if user_Choice == "a":
+        print("\nDu möter döden och utmanar döden till schack")
+    else:
+        print("\nDu får bottennapp, det är ätlig tång med nyttiga vitaminer")
+"""
