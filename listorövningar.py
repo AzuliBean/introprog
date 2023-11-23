@@ -72,63 +72,67 @@ print("You've ended the program here are some stats: \n\nYou've written the name
 """
 
 
-#övning 4 
-
-def playfield():  
-    grid_size = 35
-
-    columns = 5
-    rows = 7  # Adjust this based on the total number of elements (35) and the number of columns (5)
-    my_list = []
-
-    counter = 1
-    for i in range(rows):
-        row = []
-        for j in range(columns):
-            if counter <= 35:
-                row.append(counter)
-                counter += 1
-        my_list.append(row)
-
-    # Print the resulting list
-    for row in my_list:
-        print(row)
-
-def bingo_Card():
-    counter = 0
-    while counter != 10:
-        playfield()
-        counter += 1
-        
-        if counter == 5:
-            print()
-        
-    
-bingo_Card()
-
-    
-"""
+#övning 4  
+# 
 import random
+     
+def bingo_Card():
+    def playfield():  
+        grid_size = 45
 
-def generera_vinnande_rad():
-    return [random.randint(1, 35) for _ in range(7)]
+        columns = 5
+        rows = 7  # Adjust this based on the total number of elements (35) and the number of columns (5)
+        my_list = []
+
+        counter = 11
+        for i in range(rows):
+            row = []
+            for j in range(columns):
+                if counter <= 45:
+                    row.append(counter)
+                    counter += 1
+            my_list.append(row)
+
+        # Print the resulting list
+        return my_list
+
+    def bingo():
+        pf, pf1, pf2, pf3, pf4 = playfield(), playfield(), playfield(), playfield(), playfield()
+
+        for row1, row2, row3, row4, row5 in zip(pf, pf1, pf2, pf3, pf4):
+            print(row1, end=" ")
+            print(row2, end=" ")
+            print(row3, end=" ")
+            print(row4, end=" ")
+            print(row5)
+
+
+    print("- - - - - - - - - - - - - - - - - - - - - - - -BINGO CARD- - - - - - - - - - - - - - - - - - - - - - - -")
+    bingo()
+    print()
+    bingo()
+    print("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -")
+
+
+def generate_winning_numbers():
+    return [random.randint(11, 45) for _ in range(7)]
 
 def generera_spelfalt():
-    antal_spelfalt = 10
-    spelfalt = []
+    winning_rows = 10
+    row = []
 
-    for _ in range(antal_spelfalt):
-        vinnande_rad = generera_vinnande_rad()
-        spelfalt.append(vinnande_rad)
+    for _ in range(winning_rows):
+        winning_row = generate_winning_numbers()
+        row.append(winning_row)
 
-    return spelfalt
+    return row
 
-def main():
-    spelfalt = generera_spelfalt()
+def wins():
+    row = generera_spelfalt()
 
-    for i, vinnande_rad in enumerate(spelfalt, start=1):
-        print(f"Spelfält {i}: {vinnande_rad}")
+    for i, winning_row in enumerate(row, start=1):
+        print(f"row {i}: {winning_row}")
 
-if __name__ == "__main__":
-    main()
-"""
+bingo_Card()
+print()
+wins()
