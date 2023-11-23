@@ -84,13 +84,19 @@ def bingo_Card():
         rows = 7  # Adjust this based on the total number of elements (35) and the number of columns (5)
         my_list = []
 
+        #where the start of the range is, if it's set to 1 it will start counting at 1
         counter = 11
+        #creats rows for each playfield
         for i in range(rows):
+            #creats a empty "row" list that will be put into the "my list" list
             row = []
             for j in range(columns):
                 if counter <= 45:
+                    #adds  what the current counter is into the row that then gets put into the list
                     row.append(counter)
+                    #increases the counter by 1
                     counter += 1
+                    
             my_list.append(row)
 
         # Print the resulting list
@@ -135,4 +141,8 @@ def wins():
 
 bingo_Card()
 print()
+print("The winning numbers for each playfield are the following:")
 wins()
+
+
+
