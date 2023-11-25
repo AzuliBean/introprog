@@ -71,7 +71,7 @@ names.sort()
 print("You've ended the program here are some stats: \n\nYou've written the name Kalle " + str(kalle_Counter) + "times in total. \nHere is a list of all the names you have written down\n" + str(names) )
 """
 
-
+"""
 #övning 4  
 # 
 import random
@@ -96,15 +96,16 @@ def bingo_Card():
                     row.append(counter)
                     #increases the counter by 1
                     counter += 1
-                    
+            #adds the row to the playfield
             my_list.append(row)
 
         # Print the resulting list
         return my_list
 
     def bingo():
+        #create variables that make up the row of playfields
         pf, pf1, pf2, pf3, pf4 = playfield(), playfield(), playfield(), playfield(), playfield()
-
+        #lines up the rows next  to  eachother using zip and end = " "
         for row1, row2, row3, row4, row5 in zip(pf, pf1, pf2, pf3, pf4):
             print(row1, end=" ")
             print(row2, end=" ")
@@ -112,29 +113,29 @@ def bingo_Card():
             print(row4, end=" ")
             print(row5)
 
-
+    #creates a "GUI"  to make the bingo card look better
     print("- - - - - - - - - - - - - - - - - - - - - - - -BINGO CARD- - - - - - - - - - - - - - - - - - - - - - - -")
     bingo()
     print()
     bingo()
     print("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -")
 
-
+#defines the range of random numbers that can be generated 
 def generate_winning_numbers():
     return [random.randint(11, 45) for _ in range(7)]
-
-def generera_spelfalt():
+#defines the how many winning rows and that they should be empty lists in the start
+def generate_winning_row():
     winning_rows = 10
     row = []
-
+    #generates the random numbers for the rows and then inserts them into the winning rows
     for _ in range(winning_rows):
         winning_row = generate_winning_numbers()
         row.append(winning_row)
 
     return row
-
+#prints out all of the 10 rows that are the winning numbers 
 def wins():
-    row = generera_spelfalt()
+    row = generate_winning_row()
 
     for i, winning_row in enumerate(row, start=1):
         print(f"row {i}: {winning_row}")
@@ -143,6 +144,42 @@ bingo_Card()
 print()
 print("The winning numbers for each playfield are the following:")
 wins()
+"""
 
 
+#övning 5
+import random
+#creates a empty list to store all the top scores
+top_Scores = []
 
+#creates a start variable so that the while case can start
+answer = str.lower(input("Write start to start the game: "))
+while answer != "stop":
+    #asks if user wants to generate  a value or stop the porgram
+    answer = str.lower(input("\nType Generate to get a score \nType Stop to end the game \nwhat do you want to do: "))
+    #if answered generate this case will start
+    if answer == "generate":
+        #generates a random score from 0 - 1000
+        score = random.randint(0, 1000)
+        #checks the length of the list and if it's smaller than 10 then it will just automatically add the newly generated score to the list
+        if len(top_Scores) < 10:
+            top_Scores.append(score)
+        #if the length of the list is bigger than 10 then start doing this
+        else:
+            #creates a variable that stores the smallest value from  the list
+            min_Score = top_Scores.index(min(top_Scores))
+            #checks if the newlygenerated score is bigger than the smallest score currently in the list
+            if score > top_Scores[min_Score]:
+                #replaces the smallest score with the newly generated score that was larger
+                top_Scores[min_Score] = score
+    #sorts the list with the largest score at the top
+    top_Scores.sort(reverse=True)
+    print(top_Scores)
+            
+print("\n The top scores are the following")
+n = 1
+for i in top_Scores:
+    
+   #printseevery score in the list individually to create a scoreboard
+    print("\n", str(n), " - ", i, "points")
+    n += 1
