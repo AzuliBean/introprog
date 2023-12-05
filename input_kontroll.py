@@ -1,3 +1,5 @@
+
+
 def main_interaktion():
     while True:
         print ("1: Kontrollera heltal: ")
@@ -28,9 +30,28 @@ def main_interaktion():
             break
         else:
             print("Felaktigt val")
+            
+ def check_datatype(data,datatype):
+     
+     I = type(int)
+     F = type(float)
+     T = type(str)
+    
+    if datatype == type(data):
+        data
+    
+    def is_integer(data):
+       if data == datatype:
+           return True
+       else:
+           return False 
+    def is_float(data):
+    
+    def is_text(data):
+         
 
 # Nedanstående är en vanlig konstruktion för att köra main_interaktion()-funktionen vid uppstart.
 # Ni behöver inte förstå hur denna kod funkar, bara att programmet startar med main_interaktion().
 if __name__ == "__main__":
     main_interaktion()
-
+    
