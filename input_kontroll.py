@@ -1,4 +1,24 @@
+import sys
 
+def check_datatype(data, datatype):
+    def is_Integer(data):
+        return isinstance(data, int)
+
+    def is_Float(data):
+        return isinstance(data, float)
+
+    def is_Text(data):
+        return isinstance(data, str)
+
+    if datatype == "I" and is_Integer(data):
+        return True
+    elif datatype == "F" and is_Float(data):
+        return True
+    elif datatype == "T" and is_Text(data):
+        return True
+    else:
+        print(f"Error: This data type is not valid {datatype}")
+        sys.exit()
 
 def main_interaktion():
     while True:
@@ -31,24 +51,7 @@ def main_interaktion():
         else:
             print("Felaktigt val")
             
- def check_datatype(data,datatype):
-     
-     I = type(int)
-     F = type(float)
-     T = type(str)
-    
-    if datatype == type(data):
-        data
-    
-    def is_integer(data):
-       if data == datatype:
-           return True
-       else:
-           return False 
-    def is_float(data):
-    
-    def is_text(data):
-         
+
 
 # Nedanstående är en vanlig konstruktion för att köra main_interaktion()-funktionen vid uppstart.
 # Ni behöver inte förstå hur denna kod funkar, bara att programmet startar med main_interaktion().
