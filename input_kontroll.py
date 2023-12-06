@@ -10,7 +10,7 @@ def check_datatype(data, datatype):
     def is_Text(data):
         return isinstance(data, str)
 
-    if datatype == "I" and is_Integer(data):
+    if datatype == "I" and is_Integer(int(data)):
         return True
     elif datatype == "F" and is_Float(data):
         return True
