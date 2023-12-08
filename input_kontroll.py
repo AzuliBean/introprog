@@ -1,24 +1,32 @@
 import sys
 
+#creates the function check_datatype
 def check_datatype(data, datatype):
+    #these are a set of help functions that checks if the data that is given is a int,float,str using isinstance 
     def is_Integer(data):
+        #if the object "data" is a integer the it will return true if not it will return false
         return isinstance(data, int)
 
     def is_Float(data):
+        #if the object "data" is a float the it will return true if not it will return false
         return isinstance(data, float)
 
     def is_Text(data):
+        #if the object "data" is a string the it will return true if not it will return false
         return isinstance(data, str)
 
+    #if statement that checks if the input is is both assigned "I" as well as is_Integer and if that is true then it will return True
     if datatype == "I" and is_Integer(int(data)):
         return True
-    elif datatype == "F" and is_Float(data):
+    #if statement that checks if the input is is both assigned "F" as well as is_Float and if that is true then it will return True
+    elif datatype == "F" and is_Float(float(data)):
         return True
+    #if statement that checks if the input is is both assigned "T" as well as is_Text and if that is true then it will return True
     elif datatype == "T" and is_Text(data):
         return True
+    #if none of these if statements are true then it will exit the application 
     else:
-        print(f"Error: This data type is not valid {datatype}")
-        sys.exit()
+        exit()
 
 def main_interaktion():
     while True:
