@@ -3,6 +3,10 @@ import sys
 
 def check_datatype(data, datatype):
     
+    if datatype not in ["I", "F", "T"]:
+        return f"Error expected datatypes I F or T. but got : {datatype}"
+    #tests if you get a a error
+    
     def is_Integer(data):
         #if the object "data" is a integer the it will return true if not it will return false
         return isinstance(data, int)
@@ -13,11 +17,8 @@ def check_datatype(data, datatype):
 
     def is_Text(data):
         
-        return isinstance(data, str)
+        return isinstance(data, str) and data.strip() != ""
     
-    if not datatype in "IFT":
-        sys.exit(f"Error processing data. Expected a: {datatype} but got : {data}")
-    #tests if you get a a error
     try:
        
         if datatype == "I" and is_Integer(int(data)):
@@ -28,13 +29,10 @@ def check_datatype(data, datatype):
 
         elif datatype == "T" and is_Text(data):
             return True
-    #if there is a error then run the code under 
-    except:
-       return False
-
-
-        
-
+    except ValueError:
+        return False
+    
+    return False
         
 
 def main_interaktion():
