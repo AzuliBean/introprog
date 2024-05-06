@@ -11,6 +11,9 @@ def meny_val_ett(members):
 def meny_val_tva(members, likes):
     find = input("Vem är det du letar efter: ")
 
+    while not find.strip():
+        find = input("Du måste mata in något: ")
+
     if find not in members:
         print(f"{find} är inte medlem i föreningen")
         return

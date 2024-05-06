@@ -4,7 +4,9 @@ import sys
 def check_datatype(data, datatype):
     
     if datatype not in ["I", "F", "T"]:
-        return f"Error expected datatypes I F or T. but got : {datatype}"
+        print (f"Error expected datatypes I F or T. but got : {datatype}")
+        sys.exit()
+
     #tests if you get a a error
     
     def is_Integer(data):
@@ -72,4 +74,3 @@ def main_interaktion():
 # Ni behöver inte förstå hur denna kod funkar, bara att programmet startar med main_interaktion().
 if __name__ == "__main__":
     main_interaktion()
-    
